@@ -6542,6 +6542,7 @@ bool g_IsScheduleNodeAsServiceNode(std::vector<int> schedule_node_sequence)
 	return isSubSet;
 }
 
+//// testing 
 void g_ProhibitMovement(int up_node_id, int node_id, int dest_node_id)
 {
 	string movement_id = GetMovementStringID(up_node_id, node_id, dest_node_id);
