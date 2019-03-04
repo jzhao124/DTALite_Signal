@@ -3502,7 +3502,7 @@ void ReadLinkTollScenarioFile(string FileName, int scenario_no)
 
 			std::string demand_type_code = g_LinkVector[li]->demand_type_code;
 
-
+			// pt is demand type
 			for (int pt = 1; pt <= g_DemandTypeVector.size(); pt++)
 			{
 				CString number;
@@ -3517,7 +3517,6 @@ void ReadLinkTollScenarioFile(string FileName, int scenario_no)
 
 			}  //end of pt
 			g_LinkVector[li]->TollVector.push_back(tc);
-
 		}
 
 	}
@@ -3534,7 +3533,7 @@ void ReadLinkTollScenarioFile(string FileName, int scenario_no)
 		g_LogFile << "Reading file " << FileName << endl;
 
 
-		char  str_line[2000]; // input string
+		char str_line[2000]; // input string
 		int str_line_size = 1000;
 		g_read_a_line(st, str_line, str_line_size); //  skip the first line  // with HOV 2 and 3
 
@@ -3571,10 +3570,8 @@ void ReadLinkTollScenarioFile(string FileName, int scenario_no)
 
 				for (int pt = 1; pt <= g_DemandTypeVector.size(); pt++) // for each demand type
 				{
-
 					float toll_value = g_read_float(st);
 					tc.TollRate[pt] = toll_value;
-
 				}
 
 					count++;
@@ -3595,7 +3592,6 @@ void ReadLinkTollScenarioFile(string FileName, int scenario_no)
 		//	g_SummaryStatFile.WriteNumber(TotalTollValue[pt]);
 
 		//}
-
 
 		fclose(st);
 
